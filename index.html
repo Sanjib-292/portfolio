@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sanjib Sah - Senior Flutter Developer</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.5s, color 0.5s;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #6366f1;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            font-size: 2rem;
+        }
+
+        p {
+            text-align: center;
+            line-height: 1.6;
+            font-size: 1.05rem;
+            margin-top: 0.5rem;
+        }
+
+        p b {
+            color: #7c3aed;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+            text-align: left;
+            margin-top: 1rem;
+        }
+
+        ul li {
+            margin-bottom: 0.7rem;
+        }
+
+        .skills-category,
+        .experience,
+        .projects {
+            background: rgba(100, 116, 139, 0.05);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+
+        .skills-group,
+        .experience-group,
+        .projects-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill,
+        .experience-card,
+        .project-card {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .skill {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skill img {
+            width: 51px;
+            height: 51px;
+            margin-bottom: 5px;
+        }
+
+        .skill p {
+            font-size: 0.65rem;
+            margin-top: 0;
+        }
+
+        .experience-card {
+            width: 400px;
+            min-height: 300px;
+            border-radius: 10px;
+            padding: 1rem 1rem 0.5rem 1rem;
+        }
+
+        .project-card {
+            width: 100px;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .experience-card img,
+        .project-card img {
+            width: 55px;
+            height: 55px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+
+        .project-card p {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 0.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 530;
+        }
+
+        .contact-info a:hover {
+            color: #6366f1;
+        }
+
+        .light {
+            --bg: #ffffff;
+            --text: #111827;
+        }
+
+        .dark {
+            --bg: #0f172a;
+            --text: #f1f5f9;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 2000px;
+            cursor: pointer;
+            font-size: 1rem;
+            z-index: 1000;
+        }
+
+        .hire-me {
+            position: fixed;
+            right: 10px;
+            bottom: 20px;
+            background: #9333ea;
+            color: white;
+            padding: 12px 20px;
+            font-size: small;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .hire-me img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hire-me:hover {
+            background: #7c3aed;
+            transform: scale(1.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .linkedin-icon {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .download-resume {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #6366f1;
+            color: white;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+
+        .download-resume:hover {
+            background: #4f46e5;
+        }
+
+        .resume-container {
+            text-align: center;
+        }
+
+        .download-resume {
+            display: inline-block;
+            padding: 10px 22px;
+            color: white;
+            font-weight: 600;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .download-resume:hover {
+            background: #7e22ce;
+        }
+
+
+        .skill:hover,
+        .experience-card:hover,
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body class="light">
+
+    <!-- Theme Toggle -->
+
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
+
+
+    <div class="container">
+
+        <!-- About Section -->
+        <section data-aos="fade-up">
+            <h1>Sanjib Sah</h1>
+            <h2><span class="typed-text"></span></h2>
+            <p>
+                Senior Flutter Developer with over <b>6 years</b> of experience building high-performance apps.
+                Successfully deployed <b>20+ apps</b> across Play Store and App Store,
+                some reaching <b>over 1 Million downloads</b>. Skilled in leading teams,
+                designing scalable solutions, and delivering exceptional user experiences across <b>FinTech</b>,
+                <b>Logistics</b>, <b>Healthcare</b>, and <b>E-learning</b> domains.
+            </p>
+
+
+
+        </section>
+
+        <!-- Skills Section -->
+        <section data-aos="fade-up">
+            <h2>Skills</h2>
+            <div class="skills-category">
+                <h3>Programming Languages</h3>
+                <div class="skills-group">
+                    <div class="skill"><img src="https://img.icons8.com/color/96/dart.png" />
+                        <p>Dart</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/kotlin.png" />
+                        <p>Kotlin</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/python.png" />
+                        <p>Python</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/javascript.png" />
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/typescript.png" />
+                        <p>TypeScript</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/html-5.png" />
+                        <p>HTML</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/css3.png" />
+                        <p>CSS</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/sql.png" />
+                        <p>SQL</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Frameworks & Libraries</h3>
+                <div class="skills-group">
+                    <div class="skill"><img src="https://img.icons8.com/color/96/flutter.png" />
+                        <p>Flutter</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/officel/80/react.png" />
+                        <p>React.js</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/nodejs.png" />
+                        <p>Node.js</p>
+                    </div>
+                    <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png"
+                            style="background:#fff; border-radius:8px" />
+                        <p>Express.js</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/vue-js.png" />
+                        <p>Vue.js</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/bootstrap.png" />
+                        <p>Bootstrap</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/material-ui.png" />
+                        <p>Material UI</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/amazon-web-services.png" />
+                        <p>AWS</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Development Tools & Platforms</h3>
+                <div class="skills-group">
+                    <div class="skill"><img src="https://img.icons8.com/color/96/git.png" />
+                        <p>Git</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/ios-filled/100/github.png" />
+                        <p>GitHub</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/mysql-logo.png" />
+                        <p>MySQL</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/mongodb.png" />
+                        <p>MongoDB</p>
+                    </div>
+                    <div class="skill"><img
+                            src="https://cdn.iconscout.com/icon/free/png-512/netlify-3629137-3030002.png?f=webp&w=256" />
+                        <p>Netlify</p>
+                    </div>
+                    <div class="skill"><img
+                            src="https://cdn.iconscout.com/icon/free/png-512/postman-3521648-2945092.png?f=webp&w=256" />
+                        <p>Postman</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/visual-studio-code-2019.png" />
+                        <p>VS Code</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/android-studio--v2.png" />
+                        <p>Android Studio</p>
+                    </div>
+                    <div class="skill"><img src="https://img.icons8.com/color/96/jira.png" />
+                        <p>Jira</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Experience Section -->
+        <section data-aos="fade-up">
+            <h2>Experience</h2>
+            <div class="experience-group">
+
+                <div class="experience-card">
+                    <img src="https://scontent.fccu31-1.fna.fbcdn.net/v/t39.30808-6/476605571_1011913367656790_3484412777559663487_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=M8_W8s1ap3QQ7kNvwFvDyLU&_nc_oc=Adnj_sLjqmyaMiAdYPPJhqA-pVKTbR7ZApVLyQ7PrxIBjdM3mX6d4FSrmQFIO9flxHU&_nc_zt=23&_nc_ht=scontent.fccu31-1.fna&_nc_gid=xFr9btckarZpKjh8MdsCYw&oh=00_AfEE3vFCqMcQVQigOwPGABwOedDW5o80Vr8qLD3WPzftSQ&oe=681592DE"
+                        alt="Banki Holding">
+                    <h3>Banki Holding</h3>
+                    <h4>Senior Flutter Developer</h4>
+                    <ul>
+                        <li>Built scalable, high-performance features improving responsiveness and UX.</li>
+                        <li>Streamlined UI codebase with modular reusable components.</li>
+                        <li>Collaborated across teams to deliver app improvements faster.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <img src="https://media.licdn.com/dms/image/v2/C560BAQE2RAAOOjdbyg/company-logo_200_200/company-logo_200_200/0/1631392910927?e=1751500800&v=beta&t=xN_Nj_mS5QxUJkpyvCeQgE3OP_uZUJ_hLDnZb2o3bzU"
+                        alt="Qount">
+                    <h3>Qount</h3>
+                    <h4>Software Engineer</h4>
+                    <ul>
+                        <li>Led mobile team of 8 developers building scalable Flutter apps.</li>
+                        <li>Launched 15+ app features boosting user retention by 60%.</li>
+                        <li>Built admin dashboards for real-time monitoring and control.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <img src="https://media.licdn.com/dms/image/v2/D560BAQExr9X3uf2dlg/company-logo_200_200/company-logo_200_200/0/1704899862413/innovation_incubator_advisory_logo?e=1751500800&v=beta&t=YWTdbMZVm3akPVT_Ado8XTj_7z9LEQUDkdZ7FYKt8UI"
+                        alt="Innovation Incubator Advisory">
+                    <h3>Innovation Incubator Advisory</h3>
+                    <h4>Software Engineer</h4>
+                    <ul>
+                        <li>Built and deployed 4+ mobile/web apps with 800k+ users.</li>
+                        <li>Worked with AWS serverless architecture (Lambda, S3, RDS).</li>
+                        <li>Created responsive UIs and REST APIs in Flutter & Node.js.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <img src="https://media.licdn.com/dms/image/v2/D560BAQHBv5Jt95IRMQ/company-logo_200_200/company-logo_200_200/0/1722961161861/jupiter_ai_labs_logo?e=1751500800&v=beta&t=JkPBrZbIOVkrYNMIYHsGwhf3eakyBnNIOTE7bBnHpyc"
+                        alt="Jupiter AI Labs">
+                    <h3>Jupiter AI Labs</h3>
+                    <h4>Full Stack Developer</h4>
+                    <ul>
+                        <li>Designed and deployed food delivery platform (200K+ downloads).</li>
+                        <li>Worked on real-time tracking, order management and analytics.</li>
+                        <li>Maintained 95% on-time project delivery record.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section data-aos="fade-up">
+            <h2>Projects</h2>
+            <div class="projects-group">
+                <a href="https://apps.apple.com/in/app/zengato/id1636693896" target="_blank"
+                    style="text-decoration: none; color: inherit;">
+                    <div class="project-card">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/59/1d/3e/591d3ebc-2b6c-4f2c-6f9b-cfaf2da694b0/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/246x0w.webp"
+                            alt="Zengato">
+                        <b>Zengato</b>
+                    </div>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.glowfishlabs.carswitch&hl=en_IN"
+                    target="_blank" style="text-decoration: none; color: inherit;">
+
+                    <div class="project-card">
+                        <img src="https://play-lh.googleusercontent.com/kciTB6dlEloUtx5gW5G1cw06vJBKW0kAZG8CnTEZFwsZ_dH4k-zITMrYhDmv9BEko9U=w480-h960-rw"
+                            alt="CarSwitch">
+                        <b>CarSwitch</b>
+                    </div>
+                </a>
+                <a href="https://emisafe.in/safe/" target="_blank" style="text-decoration: none; color: inherit;">
+
+                    <div class="project-card">
+                        <img src="https://scontent.fccu31-2.fna.fbcdn.net/v/t39.30808-6/240587645_130897915921890_5219968034749292620_n.png?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=5ZUTTZMqAHYQ7kNvwHIJgr_&_nc_oc=Admyev0GfoDM7szX8gaXFC7ZvFAZRMEqcvUVGUYMCT5tisttjt1bcQ7CBKW95lLUWms&_nc_zt=23&_nc_ht=scontent.fccu31-2.fna&_nc_gid=HmIAYoUtbHIwaUPBBioNzg&oh=00_AfFa0fuj181HDRoAtNOulyMREqpnebIe17QYJYWreKDnVg&oe=68158888"
+                            alt="EMI Safe">
+                        <b>EMISafe</b>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section data-aos="fade-up">
+            <h2>Contact Me</h2>
+            <p class="contact-info">
+                📧 <a href="mailto:sanjibsah4042@gmail.com">Sanjibsah4042@gmail.com</a><br>
+                📞 <a href="tel:+917002269853">+91 7002269853</a><br>
+                <img src="https://img.icons8.com/ios-filled/50/228BE6/linkedin.png" class="linkedin-icon"
+                    alt="LinkedIn">
+                <a href="https://www.linkedin.com/in/sanjib292" target="_blank">LinkedIn</a>
+            </p>
+        </section>
+
+    </div>
+
+    <!-- Floating Hire Me Button -->
+    <!-- Floating Download Resume Button -->
+    <a href="Sanjib Sah Sr Flutter Developer.pdf" download class="hire-me">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/download-2--v1.png" alt="Download Icon"
+            style="vertical-align: middle; margin-right: 0px;">
+        Resume
+    </a>
+
+
+    <!-- AOS and Typing Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        const typedText = document.querySelector('.typed-text');
+        const roles = ["Senior Flutter Developer", "Mobile App Specialist", "Creative Coder"];
+        let index = 0;
+
+        function fadeText() {
+            typedText.style.opacity = 0;
+            setTimeout(() => {
+                typedText.textContent = roles[index];
+                typedText.style.opacity = 1;
+                index = (index + 1) % roles.length;
+            }, 500);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            typedText.textContent = roles[0];
+            setInterval(fadeText, 3000);
+        });
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.remove('light');
+            body.classList.add('dark');
+        }
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            body.classList.toggle('light');
+            localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+
+</body>
+
+</html>
